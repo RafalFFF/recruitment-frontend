@@ -3,13 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+
+import { RouterModule, Routes } from '@angular/router';
+import { MainContentComponent } from './main-content/main-content.component';
+
+const appRputes:Routes=[
+  {path:'',component:AppComponent}
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationBarComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRputes),
     AppRoutingModule
   ],
   providers: [],
