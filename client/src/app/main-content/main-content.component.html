@@ -1,47 +1,46 @@
 <main class="main-content">
-    <div class="caption-holder">
-        <div>
-            <h1>Nagłówek H1</h1>
-            <hr>
-        </div>
+  <div class="caption-holder">
+    <div>
+      <h1>Nagłówek H1</h1>
+      <hr />
     </div>
-    <div class="block-holder">
-        <div class="block">
-            <p>BLOK PIERWSZY</p>
-            <div class="check-box-holder">
-                <label for="option1">
-                    <input id="option1" type="checkbox">
-                    <span class="checkmark"></span>
-                    Opcja pierwsza
-                </label>
-                <label for="option2">
-                    <input id="option2" type="checkbox">
-                    <span class="checkmark"></span>
-                    Opcja druga
-                </label>
-                <label for="option3">
-                    <input id="option3" type="checkbox">
-                    <span class="checkmark"></span>
-                    <p>Opcja losowa</p> 
-                </label>
-            </div>
-        </div>
-        <div class="block">
-            <P>BLOK DRUGI</P>
-            <div class="block-button-holder">
-                <button>ZASTĄP</button>
-                <button>DOKLEJ</button>
-            </div> 
-        </div>
-        <div class="block">
-            <div class="last-block-captions">
-                <P>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE...</P>
+  </div>
+  <div class="block-holder">
+    <div class="block">
+      <p>BLOK PIERWSZY</p>
+      <div class="check-box-holder">
+        <label for="option1">
+          <input id="option1" type="checkbox" />
+          <span class="checkmark"></span>
+          Opcja druga
+        </label>
 
-            </div>
-            <div class="text-holder">
-                try the + symbol: It is Adjacent sibling combinator. It combines two sequences of simple selectors having the same parent and the second one must come IMMEDIATELY after the first.
-            </div>
-            
-        </div>
+        <label for="option2">
+          <input id="option2" type="checkbox" />
+          <span class="checkmark"></span>
+          Opcja druga
+        </label>
+        <label for="option3">
+          <input id="option3" type="checkbox" />
+          <span class="checkmark"></span>
+          <p>Opcja losowa</p>
+        </label>
+      </div>
     </div>
+    <div class="block">
+      <P>BLOK DRUGI</P>
+      <div class="block-button-holder">
+        <button (click)="replaceText()">ZASTĄP</button>
+        <button (click)="addText()">DOKLEJ</button>
+      </div>
+    </div>
+    <div class="block">
+      <div class="last-block-captions">
+        <P>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE...</P>
+      </div>
+      <div class="text-holder" id="text">
+        {{ text }}
+      </div>
+    </div>
+  </div>
 </main>

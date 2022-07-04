@@ -7,16 +7,19 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 
 import { RouterModule, Routes } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRputes:Routes=[
   {path:'',component:AppComponent}
-]
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
-    MainContentComponent
+    MainContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
