@@ -4,7 +4,7 @@ $hover-color:#e78301;
 
 .main-content{
     background-color: $main-content-background;
-    height: fit-content;
+    min-height: auto;
 }
 .caption-holder{
     width: 100%;
@@ -136,9 +136,13 @@ $hover-color:#e78301;
 
 
 @media screen and (max-width: 1000px) {
-
+    .main-content{
+        min-height: fit-content;
+        overflow-y: auto;
+    }
     .block-holder{
         transition: 0.5s;
+        min-height: fit-content;
         flex-wrap: wrap;
     }
     .block:nth-child(-n+2){

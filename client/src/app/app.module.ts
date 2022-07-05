@@ -11,6 +11,8 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { FooterComponent } from './footer/footer.component';
 import { BasicServiceService } from './basic-service.service';
 
+import { FormsModule } from '@angular/forms';
+
 const appRputes:Routes=[
   {path:'',component:AppComponent}
 ];
@@ -27,7 +29,8 @@ const appRputes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRputes),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [BasicServiceService],
   bootstrap: [AppComponent]

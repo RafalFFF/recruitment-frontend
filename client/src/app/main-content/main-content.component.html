@@ -9,22 +9,13 @@
     <div class="block">
       <p>BLOK PIERWSZY</p>
       <div class="check-box-holder">
-        <label for="option1">
-          <input id="option1" type="checkbox" />
-          <span class="checkmark"></span>
-          Opcja druga
-        </label>
-
-        <label for="option2">
-          <input id="option2" type="checkbox" />
-          <span class="checkmark"></span>
-          Opcja druga
-        </label>
-        <label for="option3">
-          <input id="option3" type="checkbox" />
-          <span class="checkmark"></span>
-          <p>Opcja losowa</p>
-        </label>
+        <div *ngFor="let box of checkBoxes">
+          <label for={{box.id}}>
+            <input id={{box.id}} type="checkbox" [checked]="box.select" (change)="onInputChange(box.id)" [(ngModel)]="box.select"/>
+            <span class="checkmark"></span>
+            {{box.caption}}
+          </label>
+        </div>
       </div>
     </div>
     <div class="block">
