@@ -78,6 +78,26 @@ $dark-back-ground: #141519;
         color: #b1b1b1;
         font-weight: 600;
         font-size: 12px;
+        display: flex;
+        align-items: center;
+        img{
+          margin:5px;
+        }
+      }
+    }
+    .slider-container{
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+      opacity: 0;
+      bottom: 85px;
+      right: 10px;
+      .slider{
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        opacity: 1;
       }
     }
   }
@@ -94,6 +114,7 @@ $dark-back-ground: #141519;
 }
 #third-footer-block{
     justify-content: flex-end;
+    position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 12px;
@@ -108,11 +129,13 @@ $dark-back-ground: #141519;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+  
+  }
+  #first-footer-block{
+    padding-left: 20px;
   }
   #third-footer-block{
-    justify-content: flex-end;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  padding: 0px;
 
 }
 }

@@ -13,8 +13,14 @@
             <h3>natbah</h3>
         </div>
         <div  id="third-footer-block" class="fotter-section">
-            <button>
+            <div class="slider-container">
+                <div class="slider">
+                    
+                </div>
+            </div>
+            <button (click)="onButtonClick()">
                 POKAŻ
+                <img width="12" height="12" src="{{ showDialog ? '../../assets/arrow-down.png' : '../../assets/arrow-up.png'}}"/>
             </button>
         </div>
     </div>
