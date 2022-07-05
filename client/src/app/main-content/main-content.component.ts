@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
+import {BasicServiceService} from '../basic-service.service'
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit {
+
+  randomData=[];
 
   checkBoxes = [
     {id:1,select:false,caption:'Opcja pierwsza'},
@@ -20,6 +22,7 @@ export class MainContentComponent implements OnInit {
   
   replaceText=()=>{
     this.text="Replace text";
+    console.log(this.randomData)
   }
 
   addText=()=>{
@@ -27,12 +30,15 @@ export class MainContentComponent implements OnInit {
   }
 
 
-  constructor() {
+  constructor(private service:BasicServiceService) {
 
   }
 
   ngOnInit(): void {
-    console.log(this.checkBoxes);
+    this.service.getData().subscribe((res)=>{
+      this.randomData = Object.values(res)
+    })
+    console.log(this.randomData)
   }
-
+  
 }

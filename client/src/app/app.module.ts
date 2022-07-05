@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import {HttpClientModule} from '@angular/common/http'
 
 import { RouterModule, Routes } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { FooterComponent } from './footer/footer.component';
+import { BasicServiceService } from './basic-service.service';
 
 const appRputes:Routes=[
   {path:'',component:AppComponent}
@@ -24,9 +26,10 @@ const appRputes:Routes=[
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRputes),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BasicServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

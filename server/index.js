@@ -1,11 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const server = express();
+server.use(cors());
+const dummyData = require('./dummyData.json');
 
-const randomData = require('./dummyData.json');
-
-server.get('/',(req,res)=>{
+server.get('/all',(req,res)=>{
     try {
-        res.status(200).json(randomData);
+        res.status(200).json(dummyData);
       } catch (error) {
         res.status(500).json({
           error,
