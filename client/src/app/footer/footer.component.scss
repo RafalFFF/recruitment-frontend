@@ -1,7 +1,118 @@
-.app-fotter{
-    width: 100vw;
-    position: fixed;
-    bottom: 0px;
-    height: 50px;
-    background-color: hsl(228deg 11% 9%);
+$rotate-frame-hover: #e78301;
+$rotate-frame: #303030;
+$dark-back-ground: #141519;
+@keyframes rotate {
+  from {
+    border: solid 1px $rotate-frame;
+    transform: rotate(0deg);
+  }
+  to {
+    border: solid 1px $rotate-frame-hover;
+    transform: rotate(180deg);
+  }
+}
+.app-fotter {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  background-color: $dark-back-ground;
+
+  .fotter-content-container {
+    width: 95%;
+    display: flex;
+    background-color: $dark-back-ground;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: space-between;
+    .fotter-section {
+      flex-basis: 100%;
+      display: flex;
+     
+
+      .animated-frame {
+        color: $rotate-frame;
+        position: relative;
+      }
+      .animated-frame::after {
+        content: "";
+        width: 65px;
+        height: 70px;
+        position: absolute;
+        top: -5px;
+        left: -10px;
+        border: solid 1px #303030;
+      }
+      .animated-frame:hover::after {
+        animation-name: rotate;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+      h3 {
+        color: $rotate-frame;
+        position: relative;
+      }
+      h3::before {
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 1px;
+        background-color: $rotate-frame;
+        top: 10px;
+        right: 64px;
+      }
+      h3::after {
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 1px;
+        background-color: $rotate-frame;
+        top: 10px;
+        left: 64px;
+      }
+      button {
+        padding: 7px 50px;
+        background-color: $dark-back-ground;
+        border: solid 1px $rotate-frame;
+        color: #b1b1b1;
+        font-weight: 600;
+        font-size: 12px;
+      }
+    }
+  }
+}
+#first-footer-block{
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+#second-footer-block{
+    justify-content: center;
+    padding: 20px;
+}
+#third-footer-block{
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 12px;
+}
+@media screen and (max-width: 550px) {
+  .fotter-content-container{
+    width: 95%;
+    display: flex;
+    background-color: #141519;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  #third-footer-block{
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
 }

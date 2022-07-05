@@ -8,6 +8,7 @@ $hover-color:#e78301;
     top: 0;
     background-color: $dark-backgorund;
     color: $bright-font;
+    z-index: 5;
     display: flex;
     align-items: center;
     justify-content: space-between;

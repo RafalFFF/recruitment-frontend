@@ -31,6 +31,11 @@ $hover-color:#e78301;
     justify-content: center;
     width: 100%;
     background-color: $main-content-background;
+    .bottom-block{
+        width: 100%;
+        height: 6rem;
+        display: none;
+    }
 }
 .block{
     transition: 0.5s;
@@ -74,7 +79,6 @@ $hover-color:#e78301;
             }
             label input:checked+p{
                 font-weight: 600;
-                color: blue;
             }
             span:after {
                 left: 1px;
@@ -130,6 +134,10 @@ $hover-color:#e78301;
         padding: 15px;
         margin-top: 10px;
         font-size: 12px;
+        overflow-y: scroll;
+        p{
+            font-size: 12px;
+        }
     }
 }
 
@@ -144,6 +152,9 @@ $hover-color:#e78301;
         transition: 0.5s;
         min-height: fit-content;
         flex-wrap: wrap;
+        .bottom-block{
+            display: block;
+        }
     }
     .block:nth-child(-n+2){
         background-color: blue;
@@ -170,9 +181,26 @@ $hover-color:#e78301;
         width: 90%;
         transition: 0.5s;
     }
+    
     .block:nth-child(3){
         transition: 0.5s;
         background-color: blue;
         width:90%
+    }
+    .bottom-block{
+        height: 15rem !important;
+    }
+    .check-box-holder{
+        div{
+            width: 45%;
+            margin-left: auto;
+            margin-right: auto;
+            label{
+                padding: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
     }
 }
