@@ -1,10 +1,11 @@
 $rotate-frame-hover: #e78301;
-$rotate-frame: #303030;
+$footer-font: #292930;
 $dark-back-ground: #141519;
-$slider-background:#fffffe;
+$slider-background: #fffffe;
+
 @keyframes rotate {
   from {
-    border: solid 1px $rotate-frame;
+    border: solid 1px $footer-font;
     transform: rotate(0deg);
   }
   to {
@@ -12,154 +13,154 @@ $slider-background:#fffffe;
     transform: rotate(180deg);
   }
 }
+
 .app-fotter {
   width: 100%;
   position: fixed;
   bottom: 0px;
   background-color: $dark-back-ground;
-
-  .fotter-content-container {
-    width: 95%;
+}
+.fotter-content-container {
+  width: 95%;
+  display: flex;
+  background-color: $dark-back-ground;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.fotter-section {
+  flex-basis: 100%;
+  display: flex;
+  h3 {
+    color: $footer-font;
+    position: relative;
+  }
+  h3::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: $footer-font;
+    top: 10px;
+    right: 64px;
+  }
+  h3::after {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: $footer-font;
+    top: 10px;
+    left: 64px;
+  }
+  button {
+    padding: 7px 50px;
+    background-color: #141519;
+    width: 200px;
+    border: solid 1px #303030;
+    color: #b1b1b1;
+    font-weight: 600;
+    font-size: 12px;
     display: flex;
-    background-color: $dark-back-ground;
-    margin-left: auto;
-    margin-right: auto;
     align-items: center;
-    justify-content: space-between;
-    .fotter-section {
-      flex-basis: 100%;
-      display: flex;
-     
-
-      .animated-frame {
-        color: $rotate-frame;
-        position: relative;
-      }
-      .animated-frame::after {
-        content: "";
-        width: 65px;
-        height: 70px;
-        position: absolute;
-        top: -5px;
-        left: -10px;
-        border: solid 1px #303030;
-      }
-      .animated-frame:hover::after {
-        animation-name: rotate;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-      }
-      h3 {
-        color: $rotate-frame;
-        position: relative;
-      }
-      h3::before {
-        position: absolute;
-        content: "";
-        width: 40px;
-        height: 1px;
-        background-color: $rotate-frame;
-        top: 10px;
-        right: 64px;
-      }
-      h3::after {
-        position: absolute;
-        content: "";
-        width: 40px;
-        height: 1px;
-        background-color: $rotate-frame;
-        top: 10px;
-        left: 64px;
-      }
-      button {
-        padding: 7px 50px;
-        background-color: #141519;
-        width: 200px;
-        border: solid 1px #303030;
-        color: #b1b1b1;
-        font-weight: 600;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        img{
-          margin:5px;
-          transition: 0.5s;
-        }
-        .rotate-img{
-
-          &__active{
-            transform: rotate(180deg);
-            transition: 0.5s;
-          }
-        }
-      }
-    }
-    .slider-container{
-      position: absolute;
-      width: 200px;
-      height: 60px;
-      display: flex;
-      overflow: hidden;
-      bottom: 85px;
-      right: 10px;
-      background-color: transparent;
-      .slider{
-        transform: translateY(100%);
-        transition: 0.5s;
-        height: 100%;
-        width: 100%;
-        border-bottom: none;
-        background-color: $slider-background;
-        &__active{
-          transform: translateY(0);
-        }
-        .options-holder{
-          display: flex;
-          width: 100%;
-          height: 100%;
-          flex-direction: column;
-          padding: 15px;
-
-          p{
-            font-size: 12px;
-            font-weight: 600;
-            &:hover{
-              color: $rotate-frame-hover;
-              cursor: pointer;
-            }
-          }
-         
-        }
-      }
-
-
+    justify-content: space-evenly;
+    img {
+      margin: 5px;
+      transition: 0.5s;
     }
   }
 }
-#first-footer-block{
-    justify-content: flex-start;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    .slider-container{
-      display: none;
+.slider-container {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  overflow: hidden;
+  bottom: 85px;
+  right: 10px;
+  background-color: transparent;
+}
+.slider {
+  transform: translateY(100%);
+  transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  border-bottom: none;
+  background-color: $slider-background;
+  &__active {
+    transform: translateY(0);
+  }
+}
+.options-holder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 15px;
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    font-size: 12px;
+    padding: 2px;
+    font-weight: 600;
+    &:hover {
+      color: $rotate-frame-hover;
+      cursor: pointer;
     }
+  }
 }
-#second-footer-block{
-    justify-content: center;
-    padding: 20px;
+.rotate-img {
+  &__active {
+    transform: rotate(180deg);
+    transition: 0.5s;
+  }
 }
-#third-footer-block{
-    justify-content: flex-end;
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 12px;
+.animated-frame {
+  color: $footer-font;
+  position: relative;
+}
+.animated-frame::after {
+  content: "";
+  width: 65px;
+  height: 70px;
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  border: solid 1px #303030;
+}
+.animated-frame:hover::after {
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#first-footer-block {
+  justify-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  .slider-container {
+    display: none;
+  }
+}
+#second-footer-block {
+  justify-content: center;
+  padding: 20px;
+}
+#third-footer-block {
+  justify-content: flex-end;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 12px;
 }
 @media screen and (max-width: 550px) {
-  .fotter-content-container{
+  .fotter-content-container {
     width: 95%;
     display: flex;
     background-color: #141519;
@@ -168,20 +169,19 @@ $slider-background:#fffffe;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-  
   }
-  #first-footer-block{
+  #first-footer-block {
     padding-left: 20px;
-    .slider-container{
+    .slider-container {
       display: block;
       top: -60px;
       left: 0;
     }
   }
-  #third-footer-block{
-  padding: 0px;
-  .slider-container{
-    display: none;
-  }  
-}
+  #third-footer-block {
+    padding: 0px;
+    .slider-container {
+      display: none;
+    }
+  }
 }

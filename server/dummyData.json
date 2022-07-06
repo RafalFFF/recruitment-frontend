@@ -27,6 +27,14 @@
         {
             "id":"7", 
             "text":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, "
+        },
+        {
+            "id":"8", 
+            "text":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, "
+        },
+        {
+            "id":"9", 
+            "text":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested."
         }
     ]
           

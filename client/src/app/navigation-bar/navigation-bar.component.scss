@@ -1,53 +1,57 @@
-$dark-backgorund:#0b0c10;
-$grey-background:#303030;
-$bright-font:#ffffff;
-$hover-color:#e78301;
+$dark-backgorund: #0b0c10;
+$grey-background: #303030;
+$bright-font: #ffffff;
+$hover-color: #e78301;
 
-.navigation-bar{
-    position: sticky;
-    top: 0;
-    background-color: $dark-backgorund;
-    color: $bright-font;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    p{
-        font-size: 1.5rem;
-    }
-    .logo-holder,a{
-        height: 3.2rem;
-        width: 3.2rem;
-        border-radius: 50%;
-        background-color: $grey-background;
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        &:hover{
-            background-color: $hover-color;
-            cursor: pointer;
-        }
-        a{
-            width: 100%;
-            height: 100%;
-        }
-    }
+.navigation-bar {
+  position: sticky;
+  top: 0;
+  background-color: $dark-backgorund;
+  color: $bright-font;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  p {
+    font-size: 1.5rem;
+  }
 }
 
+.logo-holder,
+a {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 50%;
+  margin-left: 2rem;
+  background-color: $grey-background;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  &:hover {
+    background-color: $hover-color;
+    cursor: pointer;
+  }
+  a {
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 @media screen and (max-width: 400px) {
-    .navigation-bar{
-        p{
-            font-size: 1rem;
-        }
+  .logo-holder {
+    margin-left: 0px;
+  }
+  .navigation-bar {
+    p {
+      font-size: 1rem;
     }
-
+  }
 }
 @media screen and (max-width: 300px) {
-    .navigation-bar{
-        padding: 5px;
-    }
-
+  .navigation-bar {
+    padding: 5px;
+  }
 }

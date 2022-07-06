@@ -1,224 +1,211 @@
-$main-content-background:#2a2d36;
-$hover-color:#e78301;
-
-
-.main-content{
-    background-color: $main-content-background;
-    min-height: auto;
+$main-content-background: #2a2d36;
+$hover-color: #e78301;
+$grey-font: hsl(223deg 13% 68%);
+.main-content {
+  background-color: $main-content-background;
+  min-height: auto;
 }
-.caption-holder{
-    width: 100%;
+.caption-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  h1 {
+    font-weight: 100;
+    padding: 5px;
+    font-size: 2.5rem;
+  }
+  hr {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+  }
+}
+.block-holder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $main-content-background;
+}
+
+.block {
+  transition: 0.5s;
+  width: 30%;
+  padding: 15px;
+  margin: 10px;
+  color: white;
+  p {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+}
+.last-block-captions {
+  width: 100%;
+  height: 1rem;
+  overflow: hidden;
+}
+.block-button-holder {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-top: 20px;
+  padding: 15px;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+  button {
+    transition: 0.4s;
+    padding: 8px 24px;
+    font-size: 12px;
+    background: none;
+    border: solid 1px white;
+    color: $grey-font;
+    margin: 5px;
+    border-radius: 3px;
+    &:hover {
+      transition: 0.4s;
+      background-color: $hover-color;
+      cursor: pointer;
+    }
+  }
+}
+.check-box-holder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  label {
+    padding: 7px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: white;
-    h1{      
-        font-weight: 100;
-        padding: 5px;
-        font-size: 2.5rem;
+    input {
+      display: none;
     }
-    hr{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5px;
+    span {
+      width: 20px;
+      height: 20px;
+      border: solid 3px white;
+      border-radius: 50%;
+      margin: 0px 10px;
     }
+    span:after {
+      position: relative;
+      display: none;
+      content: "";
+    }
+    input:checked ~ span:after {
+      display: block;
+    }
+    label input:checked + p {
+      font-weight: 600;
+    }
+    span:after {
+      left: 1px;
+      top: 1px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
-.block-holder{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: $main-content-background;
-    .bottom-block{
-        width: 100%;
-        display: none;
-    }
+.block:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 90px;
 }
-.block{
-    transition: 0.5s;
-    width: 30%;
-    height: 180px;
-    padding: 15px;
-    margin: 10px;
-    color: white;
-    p{
-        font-size: 1rem;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 2.5rem;
-    }
-    .check-box-holder{
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-        label{
-            padding: 7px;
-            display: flex;
-            align-items: center;
-            input{
-                display: none;
-            }
-            span{
-                width: 20px;
-                height: 20px;
-                border: solid 3px white;
-                border-radius: 50%;
-                margin: 0px 10px;
-            }
-            span:after{
-                position: relative;
-                display: none;
-                content: "";
-            }
-            input:checked ~ span:after {
-                display: block;
-            }
-            label input:checked+p{
-                font-weight: 600;
-            }
-            span:after {
-                left: 1px;
-                top: 1px;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background-color: white;
-              }
-              &:hover{
-                cursor: pointer;
-              }
-        }
-        
-    }
-    .last-block-captions{
-        width: 100%;
-        height: 1rem;
-        overflow: hidden;
-    }
-    .block-button-holder{
-        display: flex;
-        align-items: center;
-        width: 90%;
-        margin-top: 20px;
-        padding: 15px;
-        justify-content: space-evenly;
-        margin-left: auto;
-        margin-right: auto;
-        button{
-            transition: 0.4s;
-            padding: 6px 20px;
-            background: none;
-            border: solid 1px white;
-            color: white;
-            margin: 5px;
-            border-radius: 3px;
-            &:hover{
-                transition: 0.4s;
-                background-color: $hover-color;
-                cursor: pointer;
-            }
-        }
-    }
-
+.text-holder {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 12px;
+  p {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: $grey-font;
+  }
 }
-.block:nth-child(3){
-    display: flex;
-    flex-direction: column;
-    .text-holder{
-        width: 100%;
-        height: 120px;
-        padding: 15px;
-        margin-top: 10px;
-        font-size: 12px;
-        overflow-y: scroll;
-        p{
-            font-size: 12px;
-        }
-    }
-}
-
-
 
 @media screen and (max-width: 1000px) {
-    .main-content{
-        min-height: fit-content;
-        overflow-y: auto;
-    }
-    .block-holder{
-        transition: 0.5s;
-        min-height: fit-content;
-        flex-wrap: wrap;
-        .bottom-block{
-            display: block;
-            height: 2rem;
-        }
-    }
-
-    .block:nth-child(-n+2){
-        width: 45%;
-        transition: 0.5s;
-    }
-    .block:nth-child(3){
-        transition: 0.5s;
-        width:calc(90% + 20px);
-    }
+  .main-content {
+    min-height: fit-content;
+    overflow-y: auto;
+  }
+  .block-holder {
+    transition: 0.5s;
+    min-height: fit-content;
+    flex-wrap: wrap;
+  }
+  .block:nth-child(-n + 2) {
+    width: 45%;
+    transition: 0.5s;
+  }
+  .block:nth-child(3) {
+    transition: 0.5s;
+    width: calc(90% + 20px);
+  }
 }
 @media screen and (max-width: 550px) {
-    .caption-holder h1{
-        transition: 0.5s;
-        font-size: 1.5rem;
+  .caption-holder h1 {
+    transition: 0.5s;
+    font-size: 1.5rem;
+  }
+  .block-holder {
+    transition: 0.5s;
+    flex-wrap: wrap;
+  }
+  .block {
+    p {
+      margin-bottom: 1rem;
     }
-    .block-holder{
-        transition: 0.5s;
-        flex-wrap: wrap;
+  }
+  .block:nth-child(-n + 2) {
+    width: 90%;
+    height: fit-content;
+    transition: 0.5s;
+    button {
+      font-size: 18px;
+      padding: 10px;
     }
-    .block{
-        p{
-            margin-bottom: 1rem;
-        }
+  }
+  .block-button-holder {
+    padding: 5px;
+  }
+
+  .block:nth-child(3) {
+    transition: 0.5s;
+    width: 90%;
+    padding-bottom: 200px;
+  }
+
+  .check-box-holder {
+    div {
+      width: 100%;
+      margin-left: auto;
+      display: flex;
+      margin-right: auto;
+      flex-direction: initial;
+      label {
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
-    .block:nth-child(-n+2){
-        width: 90%;
-        height: fit-content;
-        transition: 0.5s;
-        .block-button-holder{
-            padding: 5px;
-        }
-        button{
-            font-size: 18px;
-            padding: 10px;
-        }
-    }
-    
-    .block:nth-child(3){
-        transition: 0.5s;
-        width:90%
-    }
-    .bottom-block{
-        height: 12rem !important;
-    }
-    .check-box-holder{
-        div{
-            width: 100%;
-            margin-left: auto;
-            display: flex;
-            margin-right: auto;
-            flex-direction: initial;
-            label{
-                padding: 7px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
-    }
+  }
 }
 @media screen and (max-width: 300px) {
-    .check-box-holder{
-        div{
-            width: 100%;
-        }
+  .check-box-holder {
+    div {
+      width: 100%;
     }
+  }
 }

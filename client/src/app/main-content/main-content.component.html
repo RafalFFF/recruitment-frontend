@@ -10,10 +10,15 @@
       <p>BLOK PIERWSZY</p>
       <div class="check-box-holder">
         <div *ngFor="let box of checkBoxes">
-          <label for={{box.id}}>
-            <input id={{box.id}} type="checkbox" [checked]="box.select" (change)="onInputChange(box.id)"/>
+          <label for="{{ box.id }}">
+            <input
+              id="{{ box.id }}"
+              type="checkbox"
+              [checked]="box.select"
+              (change)="onInputChange(box.id)"
+            />
             <span class="checkmark"></span>
-            {{box.caption}}
+            {{ box.caption }}
           </label>
         </div>
       </div>
@@ -30,11 +35,10 @@
         <P>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE...</P>
       </div>
       <div class="text-holder" id="text">
-           <p *ngFor="let item of addedData">
-            {{item.text}}
-          </p>
+        <p *ngFor="let item of addedData">
+          {{ item.text }}
+        </p>
       </div>
     </div>
-    <div class="bottom-block"></div>
   </div>
 </main>
