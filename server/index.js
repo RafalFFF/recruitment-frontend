@@ -5,6 +5,7 @@ server.use(cors());
 const dummyData = require('./dummyData.json');
 
 server.get('/all',(req,res)=>{
+  console.log(dummyData)
     try {
         res.status(200).json(dummyData);
       } catch (error) {

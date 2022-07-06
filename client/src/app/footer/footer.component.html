@@ -1,6 +1,15 @@
 <footer class="app-fotter">
     <div class="fotter-content-container">
         <div id="first-footer-block" class="fotter-section">
+            <div class="slider-container">
+                <div class="slider" [class.slider__active]=showDialog>
+                    <div class="options-holder">
+                        <p (click)="resetSettings()">ZRESETUJ USTAWIENIA</p>
+                        <P (click)="showPersonalData()">POKAŻ DANE OSOBOWE</P>
+                    </div>
+
+                </div>
+            </div>
             <div class="animated-frame">
                 <p>
                     CSS <br>
@@ -13,14 +22,19 @@
             <h3>natbah</h3>
         </div>
         <div  id="third-footer-block" class="fotter-section">
-            <div class="slider-container">
-                <div class="slider">
-                    
+            <div class="slider-container" >
+                <div class="slider" [class.slider__active]=showDialog>
+                    <div class="options-holder">
+                        <p (click)="resetSettings()" >ZRESETUJ USTAWIENIA</p>
+                        <P (click)="showPersonalData()">POKAŻ DANE OSOBOWE</P>
+                    </div>
+
                 </div>
             </div>
+            <div></div>
             <button (click)="onButtonClick()">
                 POKAŻ
-                <img width="12" height="12" src="{{ showDialog ? '../../assets/arrow-down.png' : '../../assets/arrow-up.png'}}"/>
+                <img width="12" height="12" [class.rotate-img__active]=showDialog  src="../../assets/arrow-up.png"  alt="">
             </button>
         </div>
     </div>

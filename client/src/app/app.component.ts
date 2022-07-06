@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+  showUserName:boolean=false;
+  reset:boolean=false;
+
+  showName(flag:boolean){
+    this.showUserName=flag;
+  }
+  resetAplication(flag:boolean){
+    this.reset=flag;
+  }
+
 }

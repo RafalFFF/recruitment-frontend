@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, transition, animate, style } from '@angular/animations'
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,18 +7,38 @@ import { trigger, transition, animate, style } from '@angular/animations'
 })
 export class FooterComponent implements OnInit {
 
-  buttonImage = []
-  showDialog:boolean = false;
-  arrowDownImg = '../../assets/arrow-down.png'
-  arrowUpImg = '../../assets/arrow-up.png'
+  public showDialog:boolean = false;
+  public showUserData:boolean = false;
+  public resetAplication:boolean = false;
+
+  @Output()
+  eventUserFlag = new EventEmitter<boolean>();
+
+  @Output()
+  resetAplicatioFlag = new EventEmitter<boolean>();
+
   constructor() { }
 
-  
   onButtonClick(){
     this.showDialog=!this.showDialog;
-    console.log(this.showDialog)
+  }
+  
+  resetSettings(){
+    this.resetAplication=true;
+    let flag=this.resetAplication;
+    this.resetAplicatioFlag.emit(flag);
   }
 
+  showPersonalData(){
+   this.showUserData=!this.showUserData;
+   let flag=this.showUserData
+   this.eventUserFlag.emit(flag);
+  }
+
+
+  toggle(){
+    this.showDialog = !this.showDialog;
+  }
 
   ngOnInit(): void {
   }

@@ -11,7 +11,7 @@
       <div class="check-box-holder">
         <div *ngFor="let box of checkBoxes">
           <label for={{box.id}}>
-            <input id={{box.id}} type="checkbox" [checked]="box.select" (change)="onInputChange(box.id)" [(ngModel)]="box.select"/>
+            <input id={{box.id}} type="checkbox" [checked]="box.select" (change)="onInputChange(box.id)"/>
             <span class="checkmark"></span>
             {{box.caption}}
           </label>
@@ -22,7 +22,7 @@
       <P>BLOK DRUGI</P>
       <div class="block-button-holder">
         <button (click)="replaceText()">ZASTĄP</button>
-        <button (click)="addText()">DOKLEJ</button>
+        <button (click)="addItemToList()">DOKLEJ</button>
       </div>
     </div>
     <div class="block">
@@ -30,9 +30,9 @@
         <P>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE...</P>
       </div>
       <div class="text-holder" id="text">
-          <!-- <p *ngFor="let text of addedText">
-            {{text.text}}
-          </p> -->
+           <p *ngFor="let item of addedData">
+            {{item.text}}
+          </p>
       </div>
     </div>
     <div class="bottom-block"></div>
